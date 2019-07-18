@@ -1,12 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
+    title: `Understanding Gatsby`,
+    author: `Unnamed`,
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
-    social: {
-      twitter: `kylemathews`,
-    },
+    siteUrl: `https://understanding-gatsby.netlify.com/`,
+
   },
   plugins: [
     {
@@ -39,7 +37,21 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
+    /*This is required for Offline PWA */
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Understanding Gatsby`,
+        short_name: `GatsbyJS`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `content/assets/gatsby-icon.png`,
+      },
+    },
+    `gatsby-plugin-offline`,
+    /*up to here*/
   ],
 }
