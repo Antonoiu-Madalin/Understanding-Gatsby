@@ -43,6 +43,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-material-ui`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
     /*This is required for Offline PWA */
