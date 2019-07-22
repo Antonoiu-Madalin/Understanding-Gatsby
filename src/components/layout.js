@@ -1,37 +1,18 @@
 import React from "react"
 import { Link } from "gatsby"
-
+import TemplateWrap from '../templates/TemplateWrap'
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    let header
+    const { title, children } = this.props
 
-    if (location.pathname === rootPath) {
-      header = (
-        <h1
-        >
-          <Link
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h1>
-      )
-    } else {
-      header = (
-        <h3 >
-          <Link
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h3>
-      )
-    }
+    let header
+    header = ( <h1><Link to={`/`} > {title} </Link> </h1>)
+
+
     return (
-      <div >
+
+     <TemplateWrap>
         <header>{header}</header>
         <main>{children}</main>
         <footer>
@@ -39,7 +20,7 @@ class Layout extends React.Component {
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
-      </div>
+      </TemplateWrap>
     )
   }
 }
